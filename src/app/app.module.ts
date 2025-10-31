@@ -11,6 +11,8 @@ import { RatingAndReviewComponent } from './components/rating-and-review/rating-
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ServicesComponent } from './components/ourServices/services.component';
 import { MenubarModule } from 'primeng/menubar';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { MenubarModule } from 'primeng/menubar';
     ProductDescriptionComponent,
     ServicesComponent,
     RatingAndReviewComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     MenubarModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
