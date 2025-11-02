@@ -8,7 +8,7 @@ nav{background:linear-gradient(135deg,#1e3a5f 0%,#2c5282 100%);padding:0 20px;bo
 .dropdown-toggle{cursor:pointer;display:flex;align-items:center;gap:5px}
 .dropdown-toggle::after{content:'▼';font-size:10px;transition:transform .3s ease; margin-left: 5px;}
 .dropdown-toggle:hover::after{transform:rotate(180deg)}
-.submenu{position:absolute;top:100%;left:0;background:#2c5282;list-style:none;min-width:220px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease;box-shadow:0 4px 15px #0003}
+.submenu{position:absolute;top:100%;left:0;background:#2c5282;list-style:none;min-width:220px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease;box-shadow:0 4px 15px #0003; z-index: 999;}
 .nav-menu li:hover .submenu{opacity:1;visibility:visible;transform:translateY(0)}
 .submenu li{border-bottom:1px solid #ffffff1a}
 .submenu li:last-child{border-bottom:none}

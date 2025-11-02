@@ -1,5 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.owl-theme .owl-nav{
+    position: absolute;
+    top: 49%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #2563eb;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.owl-theme:hover .owl-nav [class*=owl-] {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
