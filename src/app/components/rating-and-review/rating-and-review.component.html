@@ -1,1 +1,122 @@
-<p>rating-and-review works!</p>
+<div class="bg-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Main Rating Section -->
+        <div class="bg-white rounded-lg shadow-sm p-6 md:p-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Overall Rating -->
+                <div class="text-center border-r-0 md:border-r border-gray-200">
+                    <div class="text-6xl font-bold text-gray-900 mb-2">{{ overallRating }} <span
+                            class="text-2xl text-gray-500">/ 5</span></div>
+                    <div class="flex justify-center mb-3">
+                        <i class="fas fa-star text-yellow-400 text-2xl" *ngFor="let star of [1,2,3,4,5]"></i>
+                    </div>
+                    <p class="text-gray-600 font-medium">{{ totalReviews }} Reviews</p>
+                </div>
+
+                <!-- Rating Breakdown -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3" *ngFor="let rating of ratingBreakdown">
+                        <span class="text-xs font-medium text-gray-700 w-16">{{ rating.stars }} Star</span>
+                        <div class="flex-1 bg-gray-200 rounded-full h-4 overflow-hidden">
+                            <div class="bg-green-500 h-full rounded-full transition-all duration-500"
+                                [style.width.%]="rating.percentage"></div>
+                        </div>
+                        <span class="text-xs font-medium text-gray-600 w-12 text-right">({{ rating.percentage
+                            }}%)</span>
+                    </div>
+                </div>
+
+                <!-- User Satisfaction -->
+                <div class="text-center">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">User Satisfaction</h3>
+                    <div class="flex justify-around">
+                        <div class="text-center" *ngFor="let satisfaction of userSatisfaction">
+                            <div class="relative inline-flex items-center justify-center mb-2">
+                                <svg class="w-20 h-20 transform -rotate-90">
+                                    <circle cx="40" cy="40" r="32" stroke="#e5e7eb" stroke-width="6" fill="none">
+                                    </circle>
+                                    <circle cx="40" cy="40" r="32" [attr.stroke]="satisfaction.color" stroke-width="6"
+                                        fill="none" stroke-linecap="round" [style.stroke-dasharray]="2 * Math.PI * 32"
+                                        [style.stroke-dashoffset]="2 * Math.PI * 32 * (1 - satisfaction.percentage / 100)">
+                                    </circle>
+                                </svg>
+                                <span class="absolute text-lg font-bold text-gray-900">{{ satisfaction.percentage
+                                    }}%</span>
+                            </div>
+                            <p class="text-xs font-medium text-gray-700">{{ satisfaction.label }}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Individual Reviews -->
+        <div class="space-y-4">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let review of reviews; let i = index">
+                    <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-lg transition-shadow duration-300 h-44">
+                        <div class="flex items-start gap-4">
+                            <!-- Avatar -->
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                    {{ review.avatar }}
+                                </div>
+                            </div>
+
+                            <!-- Review Content -->
+                            <div class="flex-1">
+                                <div class="flex items-start justify-between mb-2">
+                                    <div>
+                                        <h4 class="text-lg font-bold text-gray-900">{{ review.name }}</h4>
+                                        <p class="text-xs text-gray-500">{{ review.location }}</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-xs"
+                                            *ngFor="let star of [1,2,3,4,5]; let i = index"
+                                            [class.text-gray-300]="i >= review.rating"></i>
+                                        <span class="ml-2 text-xs font-medium text-gray-600">({{ review.rating
+                                            }})</span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <p class="text-xs text-gray-700 mb-2"><span class="font-semibold">Product Name
+                                            :</span> {{ review.productName }}</p>
+                                    <div class="flex flex-wrap gap-4 text-xs">
+                                        <span class="flex items-center gap-1">
+                                            <span class="font-medium">Response</span>
+                                            <i class="fas fa-thumbs-up text-green-600"></i>
+                                        </span>
+                                        <span class="flex items-center gap-1">
+                                            <span class="font-medium">Quality</span>
+                                            <i class="fas fa-thumbs-up text-green-600"></i>
+                                        </span>
+                                        <span class="flex items-center gap-1">
+                                            <span class="font-medium">Delivery</span>
+                                            <i class="fas fa-thumbs-up text-green-600"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <p class="text-gray-700 text-xs" *ngIf="review.comment">{{ review.comment }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-8">
+            <button
+                class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-md hover:shadow-lg">
+                View More Reviews
+            </button>
+        </div>
+
+    </div>
+</div>

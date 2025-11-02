@@ -4,7 +4,7 @@ nav{background:linear-gradient(135deg,#1e3a5f 0%,#2c5282 100%);padding:0 20px;bo
 .nav-menu{display:flex;list-style:none;align-items:center}
 .nav-menu li{position:relative}
 .nav-menu a{display:block;color:#fff;text-decoration:none;padding:20px 25px;font-size:16px;font-weight:500;transition:all .3s ease}
-.nav-menu a:hover{background:#ffffff1a}
+.nav-menu a:hover, .active{background:#ffffff1a}
 .dropdown-toggle{cursor:pointer;display:flex;align-items:center;gap:5px}
 .dropdown-toggle::after{content:'▼';font-size:10px;transition:transform .3s ease; margin-left: 5px;}
 .dropdown-toggle:hover::after{transform:rotate(180deg)}

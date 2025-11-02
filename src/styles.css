@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
 
 .owl-theme .owl-nav{
     position: absolute;
@@ -33,4 +38,11 @@
 .owl-theme:hover .owl-nav [class*=owl-] {
     transition: opacity 0.3s ease;
     opacity: 1;
+}
+
+.h-40 {
+    height: 10rem;
+}
+.h-44 {
+    height: 11rem;
 }

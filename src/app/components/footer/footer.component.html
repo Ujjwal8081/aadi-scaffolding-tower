@@ -1,11 +1,11 @@
-<body class="bg-gray-50">
-  <!-- Top Header -->
-  <div class="bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-2">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <!-- Left Section: Logo -->
-        <div class="flex items-center justify-center sm:justify-start w-full sm:w-auto">
-          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+<footer class="bg-gray-200  py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-8">
+                <!-- Company Info Section -->
+                <div class="space-y-6">
+                    <div class="bg-gray-200 p-3 inline-block rounded">
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
            class="w-48 h-24"
            viewBox="0 0 856.000000 445.000000"
            preserveAspectRatio="xMidYMid meet">
@@ -142,64 +142,84 @@
               l-57 -7 0 72 0 71 53 0 c31 0 61 -6 75 -16z"/>
             </g>
           </svg>
-        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        We are a leading manufacturer and supplier of high-quality scaffolding products in India. Our
+                        commitment to safety, durability, and customer satisfaction sets us apart in the industry.
+                    </p>
+                </div>
 
-        <!-- Right Section: Contact Buttons -->
-        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto">
-          <!-- Call Button -->
-          <button
-            class="flex items-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-2 sm:py-2 bg-white border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition w-full sm:w-auto justify-center"
-          >
-            <i class="fas fa-phone-alt text-blue-600 text-sm sm:text-base"></i>
-            <div class="text-left">
-              <div class="text-sm sm:text-lg font-bold text-gray-900">
-                Call 9876543210
-              </div>
-              <div class="text-xs text-gray-500 hidden sm:block">
-                82% Response rate
-              </div>
-            </div>
-          </button>
+                <!-- Contact Info Section -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <p class="text-sm">
+                                123, Main Street, City Name, State, Country - 123456
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone-alt"></i>
+                            <p class="text-sm">
+                                <a href="tel:+919999999999" class="hover:text-blue-800 transition duration-300">+91 99999 99999</a>
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope"></i>
+                            <p class="text-sm">
+                                <a href="mailto:2mD9E@example.com" class="hover:text-blue-800 transition duration-300">2mD9E@example.com</a>
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock"></i>
+                            <p class="text-sm">10:00 - 17:00</p>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- Send Email Button -->
-          <button
-            class="flex items-center space-x-2 px-6 sm:px-8 py-2 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition w-full sm:w-auto justify-center"
-          >
-            <i class="fas fa-envelope text-lg sm:text-xl"></i>
-            <span class="text-base sm:text-lg font-semibold">Send Email</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation Bar -->
-  <nav>
-        <div class="nav-container">
-            <button class="menu-toggle" id="menuToggle" (click)="toggleIcon()">
-              <i class="fas fa-bars" *ngIf="!iconChange"></i>
-              <i class="fas fa-times" *ngIf="iconChange"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu" [ngClass]="iconChange ? 'active':''">
-                <li><a routerLink="home" [routerLinkActive]="'active'">Home</a></li>
-                <li>
-                    <a routerLink="about-us" class="dropdown-toggle" id="aboutToggle" [routerLinkActive]="'active'">About Us</a>
-                    <ul class="submenu" id="submenu">
-                        <li><a routerLink="review-and-rating" [routerLinkActive]="'active'">Testimonial</a></li>
-                        <li><a routerLink="our-vision" [routerLinkActive]="'active'">Our Vision</a></li>
-                        <li><a routerLink="download-brochure" [routerLinkActive]="'active'">Download Brochure</a></li>
+                <!-- Quick Links Section -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm hover:text-blue-800 transition duration-300">Home</a></li>
+                        <li><a href="#" class="text-sm hover:text-blue-800 transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-sm hover:text-blue-800 transition duration-300">Products</a></li>
+                        <li><a href="#" class="text-sm hover:text-blue-800 transition duration-300">Our Services</a></li>
+                        <li><a href="#" class="text-sm hover:text-blue-800 transition duration-300">Gallery</a></li>
+                        <li><a href="#" class="text-sm hover:text-blue-800 transition duration-300">Contact Us</a></li>
                     </ul>
-                </li>
-                <li><a routerLink="product-list" [routerLinkActive]="'active'">Our Products</a></li>
-                <li><a routerLink="services" [routerLinkActive]="'active'">Our Services</a></li>
-                <li><a routerLink="contact-us" [routerLinkActive]="'active'">Contact Us</a></li>
-            </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-400 my-8"></div>
+
+            <!-- Footer Bottom -->
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-sm text-center md:text-left">
+                    © Copyright 2025 <span class="font-semibold">Aadi Scaffolding Tower <sup>®</sup> </span>. All Rights Reserved | Powered by 
+                        <!-- <span class="font-semibold">Aligzo</span> -->
+                </p>
+                <div class="flex space-x-3">
+                    <a href="#" class="bg-white text-gray-700 w-10 h-10 rounded flex items-center justify-center hover:bg-blue-800 hover:text-white hover: transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="bg-white text-gray-700 w-10 h-10 rounded flex items-center justify-center hover:bg-blue-800 hover:text-white hover: transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="bg-white text-gray-700 w-10 h-10 rounded flex items-center justify-center hover:bg-blue-800 hover:text-white hover: transition duration-300">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="#" class="bg-white text-gray-700 w-10 h-10 rounded flex items-center justify-center hover:bg-blue-800 hover:text-white hover: transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll to Top Button -->
+            <!-- <button class="fixed bottom-6 right-6 bg-blue-600  w-12 h-12 rounded-full flex items-center justify-center hover:bg-blue-700 transition duration-300 shadow-lg">
+                <i class="fas fa-chevron-up"></i>
+            </button> -->
         </div>
-    </nav>
-
-
-
-
-
-
-
+    </footer>

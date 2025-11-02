@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-now.component.css']
 })
 export class ContactNowComponent {
+  name: string = '';
+  email: string = '';
+  message: string = '';
 
+  onSubmit() {
+    // Handle form submission logic here
+    console.log('Form submitted:', this.name, this.email, this.message);
+  }
 }

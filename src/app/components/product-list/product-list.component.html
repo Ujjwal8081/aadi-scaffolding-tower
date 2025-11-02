@@ -1,1 +1,19 @@
-<p>product-list works!</p>
+<div class="bg-gray-white p-4 sm:p-8 my-8">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">Our Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-lg shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden" *ngFor="let product of products">
+                <div class="w-full h-48 overflow-hidden bg-gray-200">
+                    <img [src]="product.image" [alt]="product.name" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ product.name }}</h3>
+                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{{ product.description }}</p>
+                    <button class="w-full px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow hover:shadow-lg">
+                        Get a Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

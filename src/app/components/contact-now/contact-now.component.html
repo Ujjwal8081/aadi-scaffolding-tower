@@ -1,1 +1,78 @@
-<p>contact-now works!</p>
+<div class="bg-gray-800 py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Request Enquiry</h2>
+      <p class="text-white text-sm md:text-base">All Fields marked with (*) are required.</p>
+    </div>
+
+    <form class="flex flex-col lg:flex-row items-stretch gap-4">
+      <!-- Full Name Input -->
+      <div class="flex-1">
+        <div class="relative">
+          <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          <input
+            type="text"
+            placeholder="Full Name *"
+            required
+            class="w-full pl-12 pr-4 py-3 md:py-4 rounded-sm border-2 border-gray-200 focus:border-blue-500 focus:outline-none text-gray-700 placeholder-gray-500"
+          />
+        </div>
+      </div>
+
+      <!-- Phone Number Input -->
+      <div class="flex-1">
+        <div class="relative">
+          <i class="fas fa-phone-alt absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          <input
+            type="tel"
+            placeholder="Phone Number *"
+            required
+            class="w-full pl-12 pr-4 py-3 md:py-4 rounded-sm border-2 border-gray-200 focus:border-blue-500 focus:outline-none text-gray-700 placeholder-gray-500"
+          />
+        </div>
+      </div>
+
+      <!-- Email Input -->
+      <div class="flex-1">
+        <div class="relative">
+          <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          <input
+            type="email"
+            placeholder="Your Email Id *"
+            required
+            class="w-full pl-12 pr-4 py-3 md:py-4 rounded-sm border-2 border-gray-200 focus:border-blue-500 focus:outline-none text-gray-700 placeholder-gray-500"
+          />
+        </div>
+      </div>
+
+      <!-- Program Select -->
+      <div class="flex-1">
+        <div class="relative">
+          <i class="fas fa-graduation-cap absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          <select
+            required
+            class="w-full pl-12 pr-4 py-3 md:py-4 rounded-sm border-2 border-gray-200 focus:border-blue-500 focus:outline-none text-gray-700 appearance-none bg-white cursor-pointer"
+          >
+            <option value="" disabled selected>-- select program --</option>
+            <option value="scaffolding">Aluminium Scaffolding</option>
+            <option value="ladder">Industrial Ladders</option>
+            <option value="tower">Scaffolding Tower</option>
+            <option value="lift">Hydraulic Scissor Lift</option>
+            <option value="other">Other</option>
+          </select>
+          <i class="fas fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="lg:w-auto">
+        <button
+          type="submit"
+          class="w-full lg:w-auto px-8 md:px-12 py-3 md:py-4 text-white bg-blue-700 font-medium rounded-sm hover:bg-blue-800 transition-colors duration-300 shadow hover:shadow-lg"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

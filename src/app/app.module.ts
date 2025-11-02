@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { ServicesComponent } from './components/ourServices/services.component';
 import { MenubarModule } from 'primeng/menubar';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './components/footer/footer.component';
+import { OurVisionComponent } from './components/our-vision/our-vision.component';
+import { DownloadBrochureComponent } from './components/download-brochure/download-brochure.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +30,14 @@ import { AppRoutingModule } from './app-routing.module';
     ServicesComponent,
     RatingAndReviewComponent,
     AboutUsComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    OurVisionComponent,
+    DownloadBrochureComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MenubarModule,
     AppRoutingModule,
     CarouselModule
