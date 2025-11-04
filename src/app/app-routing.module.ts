@@ -8,19 +8,28 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { DownloadBrochureComponent } from './components/download-brochure/download-brochure.component';
 import { OurVisionComponent } from './components/our-vision/our-vision.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactNowComponent } from './components/contact-now/contact-now.component';
 
 
 const routes: Routes = [
    { path: '', component: HomeComponent },
    { path: 'home', component: HomeComponent },
-   { path: 'about-us', component: AboutUsComponent },
-   { path: 'review-and-rating', component: RatingAndReviewComponent },
+   { 
+     path: 'about', 
+     component: AboutUsComponent,
+     children: [
+       { path: '', redirectTo: 'about-us', pathMatch: 'full' },
+       { path: 'about-us', component: AboutComponent },
+       { path: 'review-and-rating', component: RatingAndReviewComponent },
+       { path: 'our-vision', component: OurVisionComponent },
+       { path: 'download-brochure', component: DownloadBrochureComponent }
+     ]
+   },
    { path: 'product-list', component: ProductListComponent },
    { path: 'services', component: ServicesComponent },
    { path: 'contact-us', component: ContactUsComponent },
-   { path: 'download-brochure', component: DownloadBrochureComponent },
-   { path: 'our-vision', component: OurVisionComponent },
-  
+   { path: 'contact-now', component: ContactNowComponent },
 
 ];
 

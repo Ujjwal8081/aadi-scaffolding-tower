@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { OurVisionComponent } from './components/our-vision/our-vision.component';
 import { DownloadBrochureComponent } from './components/download-brochure/download-brochure.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { DownloadBrochureComponent } from './components/download-brochure/downlo
     HomeComponent,
     FooterComponent,
     OurVisionComponent,
-    DownloadBrochureComponent
+    DownloadBrochureComponent,
+    AboutComponent
+
   ],
   imports: [
     BrowserModule,

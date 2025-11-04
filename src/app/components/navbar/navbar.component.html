@@ -153,7 +153,7 @@
             <i class="fas fa-phone-alt text-blue-600 text-sm sm:text-base"></i>
             <div class="text-left">
               <div class="text-sm sm:text-lg font-bold text-gray-900">
-                Call 9876543210
+                Call 8416839999
               </div>
               <div class="text-xs text-gray-500 hidden sm:block">
                 82% Response rate
@@ -181,18 +181,18 @@
               <i class="fas fa-times" *ngIf="iconChange"></i>
             </button>
             <ul class="nav-menu" id="navMenu" [ngClass]="iconChange ? 'active':''">
-                <li><a routerLink="home" [routerLinkActive]="'active'">Home</a></li>
+                <li><a routerLink="home" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
                 <li>
-                    <a routerLink="about-us" class="dropdown-toggle" id="aboutToggle" [routerLinkActive]="'active'">About Us</a>
+                    <a routerLink="about/about-us" class="dropdown-toggle" id="aboutToggle" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">About Us</a>
                     <ul class="submenu" id="submenu">
-                        <li><a routerLink="review-and-rating" [routerLinkActive]="'active'">Testimonial</a></li>
-                        <li><a routerLink="our-vision" [routerLinkActive]="'active'">Our Vision</a></li>
-                        <li><a routerLink="download-brochure" [routerLinkActive]="'active'">Download Brochure</a></li>
+                        <li><a routerLink="about/review-and-rating" [routerLinkActive]="'active'">Testimonial</a></li>
+                        <li><a routerLink="about/our-vision" [routerLinkActive]="'active'">Our Vision</a></li>
+                        <li><a routerLink="about/download-brochure" [routerLinkActive]="'active'">Download Brochure</a></li>
                     </ul>
                 </li>
-                <li><a routerLink="product-list" [routerLinkActive]="'active'">Our Products</a></li>
-                <li><a routerLink="services" [routerLinkActive]="'active'">Our Services</a></li>
-                <li><a routerLink="contact-us" [routerLinkActive]="'active'">Contact Us</a></li>
+                <li><a routerLink="product-list" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Our Products</a></li>
+                <li><a routerLink="services" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Our Services</a></li>
+                <li><a routerLink="contact-us" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Contact Us</a></li>
             </ul>
         </div>
     </nav>
