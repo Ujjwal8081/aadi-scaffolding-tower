@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ContactNowComponent } from '../contact-now/contact-now.component';
 
 @Component({
   selector: 'app-download-brochure',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./download-brochure.component.css']
 })
 export class DownloadBrochureComponent {
+    @ViewChild(ContactNowComponent) contactNowDialog!: ContactNowComponent;
   downloadBrochure() {
     // Logic to download the brochure
     const link = document.createElement('a');
@@ -14,5 +16,8 @@ export class DownloadBrochureComponent {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  }
+    openDialog() {
+    this.contactNowDialog.openDialog();
   }
 }

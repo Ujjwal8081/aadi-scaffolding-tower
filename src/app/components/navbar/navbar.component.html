@@ -153,21 +153,21 @@
             <i class="fas fa-phone-alt text-blue-600 text-sm sm:text-base"></i>
             <div class="text-left">
               <div class="text-sm sm:text-lg font-bold text-gray-900">
-                Call 8416839999
+               <a href="tel:8416839999">Call 8416839999</a>
               </div>
               <div class="text-xs text-gray-500 hidden sm:block">
                 82% Response rate
               </div>
             </div>
           </button>
-
           <!-- Send Email Button -->
-          <button
-            class="flex items-center space-x-2 px-6 sm:px-8 py-2 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition w-full sm:w-auto justify-center"
-          >
-            <i class="fas fa-envelope text-lg sm:text-xl"></i>
-            <span class="text-base sm:text-lg font-semibold">Send Email</span>
-          </button>
+
+      <app-contact-now></app-contact-now>
+      <button (click)="openDialog()"
+        class="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold text-lg rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-3">
+        <i class="fas fa-envelope text-lg sm:text-xl"></i>
+        <span class="text-base sm:text-lg font-semibold">Send Email</span>
+      </button>
         </div>
       </div>
     </div>
@@ -185,7 +185,7 @@
                 <li>
                     <a routerLink="about/about-us" class="dropdown-toggle" id="aboutToggle" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">About Us</a>
                     <ul class="submenu" id="submenu">
-                        <li><a routerLink="about/review-and-rating" [routerLinkActive]="'active'">Testimonial</a></li>
+                        <!-- <li><a routerLink="about/review-and-rating" [routerLinkActive]="'active'">Testimonial</a></li> -->
                         <li><a routerLink="about/our-vision" [routerLinkActive]="'active'">Our Vision</a></li>
                         <li><a routerLink="about/download-brochure" [routerLinkActive]="'active'">Download Brochure</a></li>
                     </ul>

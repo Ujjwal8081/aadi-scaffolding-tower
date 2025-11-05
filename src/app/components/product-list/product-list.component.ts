@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ContactNowComponent } from '../contact-now/contact-now.component';
 
 @Component({
   selector: 'app-product-list',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+  @ViewChild(ContactNowComponent) contactNowDialog!: ContactNowComponent;
+
   products = [
     { id: 1, name: 'Aluminium Scaffolding', image: 'https://picsum.photos/300/300?random=1', description: 'High-quality aluminum scaffolding for construction and maintenance work.' },
     { id: 2, name: 'Aluminum Scaffolding', image: 'https://picsum.photos/300/300?random=2', description: 'Durable and lightweight scaffolding solution for all your needs.' },
@@ -17,4 +20,7 @@ export class ProductListComponent {
     { id: 8, name: 'Extension Ladder', image: 'https://picsum.photos/300/300?random=8', description: 'Extendable ladders for various height requirements.' }
   ];
 
+  openDialog() {
+    this.contactNowDialog.openDialog();
+  }
 }

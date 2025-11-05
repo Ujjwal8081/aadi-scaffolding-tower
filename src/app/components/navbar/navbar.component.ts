@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
-
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ContactNowComponent } from '../contact-now/contact-now.component';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,6 +9,8 @@ export class NavbarComponent {
   private aboutToggle!: HTMLElement;
   private submenu!: HTMLElement;
   iconChange: boolean = false;
+
+    @ViewChild(ContactNowComponent) contactNowDialog!: ContactNowComponent;
 
   constructor(private el: ElementRef) {}
 
@@ -25,5 +27,9 @@ export class NavbarComponent {
 
   toggleIcon(){
     this.iconChange = !this.iconChange
+  }
+
+    openDialog() {
+    this.contactNowDialog.openDialog();
   }
 }
