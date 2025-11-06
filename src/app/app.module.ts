@@ -19,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { OurVisionComponent } from './components/our-vision/our-vision.component';
 import { DownloadBrochureComponent } from './components/download-brochure/download-brochure.component';
 import { AboutComponent } from './components/about/about.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AboutComponent } from './components/about/about.component';
     BrowserAnimationsModule,
     MenubarModule,
     AppRoutingModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

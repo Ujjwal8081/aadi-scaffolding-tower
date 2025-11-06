@@ -56,24 +56,48 @@ export class HomeComponent {
   reviews = [
     {
       avatar: 'S',
-      name: 'Satheesh',
-      location: 'Nalgonda, Telangana',
+      name: 'Janhvi construction',
+      // location: 'Nalgonda, Telangana',
       rating: 5,
       productName: 'Mobile Scaffold Tower',
       comment: ''
     },
     {
       avatar: 'S',
-      name: 'SYED IMRAN',
-      location: 'Anantapur, Andhra Pradesh',
+      name: 'Awadh construction',
+      // location: 'Anantapur, Andhra Pradesh',
       rating: 5,
       productName: 'Scaffold Ladder',
       comment: ''
     },
     {
       avatar: 'B',
-      name: 'BV Balaji',
-      location: 'Hyderabad, Telangana',
+      name: 'Vaidehi industries',
+      // location: 'Hyderabad, Telangana',
+      rating: 5,
+      productName: 'Mobile Scaffold Tower',
+      comment: 'Best Vendor in supplying of Aluminium Mobile Scaffolding'
+    },
+    {
+      avatar: 'B',
+      name: 'Aadi infratech',
+      // location: 'Hyderabad, Telangana',
+      rating: 5,
+      productName: 'Mobile Scaffold Tower',
+      comment: 'Best Vendor in supplying of Aluminium Mobile Scaffolding'
+    },
+    {
+      avatar: 'B',
+      name: 'T.H.S construction',
+      // location: 'Hyderabad, Telangana',
+      rating: 5,
+      productName: 'Mobile Scaffold Tower',
+      comment: 'Best Vendor in supplying of Aluminium Mobile Scaffolding'
+    },
+    {
+      avatar: 'B',
+      name: 'Shree construction',
+      // location: 'Hyderabad, Telangana',
       rating: 5,
       productName: 'Mobile Scaffold Tower',
       comment: 'Best Vendor in supplying of Aluminium Mobile Scaffolding'
