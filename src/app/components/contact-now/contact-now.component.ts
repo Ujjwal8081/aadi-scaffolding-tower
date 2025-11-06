@@ -25,8 +25,8 @@ export class ContactNowComponent {
     this.isOpen = false;
   }
 
-  @HostListener('document:keydown.escape', ['$event'])
-  handleEscapeKey(event: KeyboardEvent) {
+  @HostListener('document:keydown.escape')
+  handleEscapeKey() {
     if (this.isOpen) {
       this.closeDialog();
     }
