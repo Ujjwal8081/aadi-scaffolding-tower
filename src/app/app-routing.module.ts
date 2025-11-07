@@ -10,6 +10,7 @@ import { DownloadBrochureComponent } from './components/download-brochure/downlo
 import { OurVisionComponent } from './components/our-vision/our-vision.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactNowComponent } from './components/contact-now/contact-now.component';
+import { ProductDescriptionComponent } from './components/product-description/product-description.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
    { path: 'services', component: ServicesComponent },
    { path: 'contact-us', component: ContactUsComponent },
    { path: 'contact-now', component: ContactNowComponent },
+    { path: 'product-description', component: ProductDescriptionComponent },
 
 ];
 

@@ -1,5 +1,178 @@
-<p>product-description works!</p>
+<div class="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Product Details Section -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 lg:p-8">
+        
+        <!-- Left Side - Product Image (33%) -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-6">
+            <div class="w-full h-80 bg-gray-200 rounded-lg overflow-hidden shadow-md">
+              <img 
+                [src]="product?.image || 'assets/images/aluminium-Scaffolding.jpg'" 
+                [alt]="product?.name" 
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            
+            <!-- Thumbnail Images (Optional) -->
+            <div class="grid grid-cols-4 gap-2 mt-4">
+              <div class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition">
+                <img [src]="product?.image" alt="Thumbnail 1" class="w-full h-full object-cover">
+              </div>
+              <div class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition">
+                <img [src]="product?.image" alt="Thumbnail 2" class="w-full h-full object-cover">
+              </div>
+              <div class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition">
+                <img [src]="product?.image" alt="Thumbnail 3" class="w-full h-full object-cover">
+              </div>
+              <div class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition">
+                <img [src]="product?.image" alt="Thumbnail 4" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Right Side - Product Description (67%) -->
+        <div class="lg:col-span-2">
+          <div class="space-y-4">
+            <!-- Product Title -->
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">{{ product?.name || 'Product Name' }}</h1>
+            
+            <!-- Rating -->
+            <div class="flex items-center gap-2">
+              <div class="flex">
+                <i class="fas fa-star text-yellow-400" *ngFor="let star of [1,2,3,4,5]"></i>
+              </div>
+              <span class="text-gray-600">(4.5/5 - 120 reviews)</span>
+            </div>
 
-       
-<div class="box">Dashes Dashes DashesDashes Dashes DashesDashes Dashes DashesDashes Dashes DashesDashes Dashes DashesDashes Dashes DashesDashes Dashes DashesDashes Dashes Dashes</div>
+            <!-- Price -->
+            <div class="flex items-baseline gap-3">
+              <span class="text-3xl font-bold text-emerald-600">₹ 15,999</span>
+              <span class="text-xl text-gray-400 line-through">₹ 19,999</span>
+              <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">20% OFF</span>
+            </div>
+
+            <!-- Description -->
+            <div class="border-t border-gray-200 pt-4">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Product Description</h3>
+              <p class="text-gray-700 leading-relaxed">
+                {{ product?.description || 'High-quality aluminum scaffolding designed for construction and maintenance work. Lightweight, durable, and easy to assemble. Perfect for both residential and commercial projects.' }}
+              </p>
+            </div>
+
+            <!-- Features -->
+            <div class="border-t border-gray-200 pt-4">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Key Features</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
+                  <span class="text-gray-700">Lightweight aluminum construction</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
+                  <span class="text-gray-700">Easy to assemble and dismantle</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
+                  <span class="text-gray-700">High load capacity and stability</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
+                  <span class="text-gray-700">Weather-resistant coating</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
+                  <span class="text-gray-700">Complies with safety standards</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Specifications -->
+            <div class="border-t border-gray-200 pt-4">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Specifications</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Material:</span>
+                  <span class="font-semibold">Aluminum Alloy</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Weight:</span>
+                  <span class="font-semibold">25 kg</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Load Capacity:</span>
+                  <span class="font-semibold">150 kg</span>
+                </div>
+                <div class="flex justify-between border-b pb-2">
+                  <span class="text-gray-600">Warranty:</span>
+                  <span class="font-semibold">2 Years</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-4">
+              <button (click)="openDialog()" class="flex-1 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                Get a Quote
+              </button>
+              <button class="flex-1 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                <a href="tel:8416839999" class="flex items-center justify-center gap-2">
+                  <i class="fas fa-phone-alt"></i>
+                  <span>Call Now</span>
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Size Options Section -->
+    <div class="bg-white rounded-lg shadow-lg p-6 lg:p-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Available Sizes</h2>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <!-- 50 Meter -->
+        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+          <div class="text-3xl font-bold text-emerald-600 mb-2">50m</div>
+          <p class="text-gray-600 text-sm">50 Meter</p>
+          <p class="text-gray-800 font-semibold mt-2">₹ 12,999</p>
+        </div>
+
+        <!-- 100 Meter -->
+        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+          <div class="text-3xl font-bold text-emerald-600 mb-2">100m</div>
+          <p class="text-gray-600 text-sm">100 Meter</p>
+          <p class="text-gray-800 font-semibold mt-2">₹ 22,999</p>
+        </div>
+
+        <!-- 150 Meter -->
+        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+          <div class="text-3xl font-bold text-emerald-600 mb-2">150m</div>
+          <p class="text-gray-600 text-sm">150 Meter</p>
+          <p class="text-gray-800 font-semibold mt-2">₹ 32,999</p>
+        </div>
+
+        <!-- 200 Meter -->
+        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+          <div class="text-3xl font-bold text-emerald-600 mb-2">200m</div>
+          <p class="text-gray-600 text-sm">200 Meter</p>
+          <p class="text-gray-800 font-semibold mt-2">₹ 42,999</p>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+        <p class="text-sm text-blue-800">
+          <i class="fas fa-info-circle mr-2"></i>
+          <strong>Note:</strong> Custom sizes are also available. Contact us for bulk orders and special requirements.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-contact-now></app-contact-now>
