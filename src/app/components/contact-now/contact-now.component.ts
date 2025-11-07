@@ -1,5 +1,6 @@
 import { Component, HostListener, Input } from '@angular/core';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-now',
@@ -36,9 +37,14 @@ export class ContactNowComponent {
     }
   }
 
- sendEmail() {
+  sendEmail() {
     if (!this.userName || !this.userMobile) {
-      alert('Please fill in both name and mobile number.');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Missing Information',
+        text: 'Please fill in both name and mobile number.',
+        confirmButtonColor: '#2563eb'
+      });
       return;
     }
 
@@ -48,19 +54,40 @@ export class ContactNowComponent {
 
     // This must match your EmailJS template variable names
     const templateParams = {
-    userName: this.userName,
-    userMobile: this.userMobile,
-  };
+      userName: this.userName,
+      userMobile: this.userMobile,
+    };
+
+    // Show loading
+    Swal.fire({
+      title: 'Sending...',
+      text: 'Please wait while we send your message.',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    });
 
     emailjs.send(serviceID, templateID, templateParams, publicKey)
       .then(() => {
-        alert('Message sent successfully!');
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Message sent successfully! We will contact you soon.',
+          confirmButtonColor: '#2563eb'
+        });
         this.userName = '';
         this.userMobile = '';
+        this.closeDialog();
       })
       .catch((error) => {
         console.error('Send error:', error);
-        alert('Failed to send message. Please try again later.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Failed to send message. Please try again later.',
+          confirmButtonColor: '#2563eb'
+        });
       });
   }
 }

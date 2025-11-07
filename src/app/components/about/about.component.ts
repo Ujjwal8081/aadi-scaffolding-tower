@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ContactNowComponent } from '../contact-now/contact-now.component';
 
 @Component({
   selector: 'app-about',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+  @ViewChild(ContactNowComponent) contactNowDialog!: ContactNowComponent;
 
+  openDialog() {
+    this.contactNowDialog.openDialog();
+  }
 }

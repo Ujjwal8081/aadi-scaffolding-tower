@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -45,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     MenubarModule,
     AppRoutingModule,
     CarouselModule,
+    SweetAlert2Module.forRoot(),
     FormsModule
   ],
   providers: [],
