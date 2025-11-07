@@ -1,4 +1,4 @@
-<body class="bg-gray-50">
+<div class="bg-gray-50">
   <!-- Top Header -->
   <div class="bg-white border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-2">
@@ -12,9 +12,9 @@
         <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto">
           <!-- Call Button -->
           <button
-            class="flex items-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-2 sm:py-2 bg-white border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition w-full sm:w-auto justify-center"
+            class="flex items-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-2 sm:py-2 bg-white border-2 border-emerald-600 rounded-lg hover:bg-emerald-100 transition w-full sm:w-auto justify-center"
           >
-            <i class="fas fa-phone-alt text-blue-600 text-sm sm:text-base"></i>
+            <i class="fas fa-phone-alt text-emerald-600 text-sm sm:text-base"></i>
             <div class="text-left">
               <div class="text-sm sm:text-lg font-bold text-gray-900">
                <a href="tel:8416839999">Call 8416839999</a>
@@ -28,7 +28,7 @@
 
       <app-contact-now></app-contact-now>
       <button (click)="openDialog()"
-        class="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold text-lg rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-3">
+        class="px-8 py-4 bg-emerald-600 text-white font-bold text-lg rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2 w-full sm:w-auto">
         <i class="fas fa-envelope text-lg sm:text-xl"></i>
         <span class="text-base sm:text-lg font-semibold">Send Email</span>
       </button>
@@ -38,7 +38,7 @@
   </div>
 
   <!-- Navigation Bar -->
-  <nav>
+  <nav class="bg-emerald-600 shadow-lg">
         <div class="nav-container">
             <button class="menu-toggle" id="menuToggle" (click)="toggleIcon()">
               <i class="fas fa-bars" *ngIf="!iconChange"></i>
@@ -48,7 +48,7 @@
                 <li><a routerLink="home" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
                 <li>
                     <a routerLink="about/about-us" class="dropdown-toggle" id="aboutToggle" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">About Us</a>
-                    <ul class="submenu" id="submenu">
+                    <ul class="submenu bg-emerald-700" id="submenu">
                         <!-- <li><a routerLink="about/review-and-rating" [routerLinkActive]="'active'">Testimonial</a></li> -->
                         <li><a routerLink="about/our-vision" [routerLinkActive]="'active'">Our Vision</a></li>
                         <li><a routerLink="about/download-brochure" [routerLinkActive]="'active'">Download Brochure</a></li>
