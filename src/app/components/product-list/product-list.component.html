@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">Our Products</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white rounded-lg shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden" *ngFor="let product of products">
+            <div (click)="viewProduct(product)" class="bg-white rounded-lg shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden cursor-pointer" *ngFor="let product of products">
                 <div class="w-full h-48 overflow-hidden bg-gray-200">
                     <img [src]="product.image" [alt]="product.name" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
                 </div>
@@ -10,11 +10,11 @@
                     <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ product.name }}</h3>
                     <p class="text-sm text-gray-600 mb-4 line-clamp-2">{{ product.description }}</p>
                     <div class="flex gap-2">
-                        <button (click)="openDialog()" class="flex-1 px-4 py-2 bg-emerald-600 text-white font-medium rounded-sm hover:bg-emerald-700 transition-colors duration-300 shadow hover:shadow-lg">
+                        <button (click)="openDialog(); $event.stopPropagation()" class="flex-1 px-4 py-2 bg-emerald-600 text-white font-medium rounded-sm hover:bg-emerald-700 transition-colors duration-300 shadow hover:shadow-lg">
                             Get a Quote
                         </button>
-                        <button class="flex-1 px-4 py-2 bg-emerald-500 text-white font-medium rounded-sm hover:bg-emerald-600 transition-colors duration-300 shadow hover:shadow-lg">
-                            <a href="tel:tel:8416839999"> Call Now</a>
+                        <button (click)="$event.stopPropagation()" class="flex-1 px-4 py-2 bg-emerald-500 text-white font-medium rounded-sm hover:bg-emerald-600 transition-colors duration-300 shadow hover:shadow-lg">
+                            <a href="tel:8416839999"> Call Now</a>
                         </button>
                     </div>
                 </div>

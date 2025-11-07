@@ -1,6 +1,15 @@
 <div class="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
     
+    <!-- Back Button -->
+    <button 
+      (click)="goBack()" 
+      class="mb-6 flex items-center gap-2 px-4 py-2 bg-white border border-emerald-300 rounded-lg hover:bg-emerald-100 transition-colors duration-300 text-emerald-700 font-medium shadow-sm"
+    >
+      <i class="fas fa-arrow-left"></i>
+      <span>Back to Products</span>
+    </button>
+
     <!-- Product Details Section -->
     <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 lg:p-8">
@@ -38,28 +47,27 @@
         <div class="lg:col-span-2">
           <div class="space-y-4">
             <!-- Product Title -->
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">{{ product?.name || 'Product Name' }}</h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">{{ product?.name }}</h1>
             
             <!-- Rating -->
             <div class="flex items-center gap-2">
               <div class="flex">
-                <i class="fas fa-star text-yellow-400" *ngFor="let star of [1,2,3,4,5]"></i>
+                <i class="fas fa-star text-yellow-400" *ngFor="let star of [1,2,3,4,5]; let i = index" [class.text-gray-300]="i >= product?.rating"></i>
               </div>
-              <span class="text-gray-600">(4.5/5 - 120 reviews)</span>
+              <span class="text-gray-600">({{ product?.rating }}/5 - {{ product?.reviews }} reviews)</span>
             </div>
 
             <!-- Price -->
             <div class="flex items-baseline gap-3">
-              <span class="text-3xl font-bold text-emerald-600">₹ 15,999</span>
-              <span class="text-xl text-gray-400 line-through">₹ 19,999</span>
-              <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">20% OFF</span>
+              <span class="text-3xl font-bold text-emerald-600">₹ {{ product?.price | number }}</span>
+              <span class="text-xl text-gray-400 line-through">₹ {{ product?.originalPrice | number }}</span>
             </div>
 
             <!-- Description -->
             <div class="border-t border-gray-200 pt-4">
               <h3 class="text-xl font-bold text-gray-900 mb-3">Product Description</h3>
               <p class="text-gray-700 leading-relaxed">
-                {{ product?.description || 'High-quality aluminum scaffolding designed for construction and maintenance work. Lightweight, durable, and easy to assemble. Perfect for both residential and commercial projects.' }}
+                {{ product?.description }}
               </p>
             </div>
 
@@ -67,25 +75,9 @@
             <div class="border-t border-gray-200 pt-4">
               <h3 class="text-xl font-bold text-gray-900 mb-3">Key Features</h3>
               <ul class="space-y-2">
-                <li class="flex items-start gap-2">
+                <li class="flex items-start gap-2" *ngFor="let feature of product?.features">
                   <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
-                  <span class="text-gray-700">Lightweight aluminum construction</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
-                  <span class="text-gray-700">Easy to assemble and dismantle</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
-                  <span class="text-gray-700">High load capacity and stability</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
-                  <span class="text-gray-700">Weather-resistant coating</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
-                  <span class="text-gray-700">Complies with safety standards</span>
+                  <span class="text-gray-700">{{ feature }}</span>
                 </li>
               </ul>
             </div>
@@ -96,19 +88,19 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div class="flex justify-between border-b pb-2">
                   <span class="text-gray-600">Material:</span>
-                  <span class="font-semibold">Aluminum Alloy</span>
+                  <span class="font-semibold">{{ product?.specifications?.material }}</span>
                 </div>
                 <div class="flex justify-between border-b pb-2">
                   <span class="text-gray-600">Weight:</span>
-                  <span class="font-semibold">25 kg</span>
+                  <span class="font-semibold">{{ product?.specifications?.weight }}</span>
                 </div>
                 <div class="flex justify-between border-b pb-2">
                   <span class="text-gray-600">Load Capacity:</span>
-                  <span class="font-semibold">150 kg</span>
+                  <span class="font-semibold">{{ product?.specifications?.loadCapacity }}</span>
                 </div>
                 <div class="flex justify-between border-b pb-2">
                   <span class="text-gray-600">Warranty:</span>
-                  <span class="font-semibold">2 Years</span>
+                  <span class="font-semibold">{{ product?.specifications?.warranty }}</span>
                 </div>
               </div>
             </div>
@@ -135,32 +127,10 @@
       <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Available Sizes</h2>
       
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <!-- 50 Meter -->
-        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
-          <div class="text-3xl font-bold text-emerald-600 mb-2">50m</div>
-          <p class="text-gray-600 text-sm">50 Meter</p>
-          <p class="text-gray-800 font-semibold mt-2">₹ 12,999</p>
-        </div>
-
-        <!-- 100 Meter -->
-        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
-          <div class="text-3xl font-bold text-emerald-600 mb-2">100m</div>
-          <p class="text-gray-600 text-sm">100 Meter</p>
-          <p class="text-gray-800 font-semibold mt-2">₹ 22,999</p>
-        </div>
-
-        <!-- 150 Meter -->
-        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
-          <div class="text-3xl font-bold text-emerald-600 mb-2">150m</div>
-          <p class="text-gray-600 text-sm">150 Meter</p>
-          <p class="text-gray-800 font-semibold mt-2">₹ 32,999</p>
-        </div>
-
-        <!-- 200 Meter -->
-        <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
-          <div class="text-3xl font-bold text-emerald-600 mb-2">200m</div>
-          <p class="text-gray-600 text-sm">200 Meter</p>
-          <p class="text-gray-800 font-semibold mt-2">₹ 42,999</p>
+        <div *ngFor="let size of product?.sizes" class="border-2 border-gray-200 rounded-lg p-4 hover:border-emerald-600 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+          <div class="text-3xl font-bold text-emerald-600 mb-2">{{ size.height }}</div>
+          <p class="text-gray-600 text-sm">{{ size.height }} Height</p>
+          <p class="text-gray-800 font-semibold mt-2">₹ {{ size.price | number }}</p>
         </div>
       </div>
 
