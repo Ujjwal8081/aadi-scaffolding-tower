@@ -14,7 +14,13 @@ export class ProductListComponent {
     { 
       id: 1, 
       name: 'Aluminium Scaffolding', 
-      image: 'assets/images/aluminium-Scaffolding.jpg', 
+      image: 'assets/images/aluminium-Scaffolding.jpg',
+      images: [
+        'assets/images/aluminium-Scaffolding.jpg',
+        'assets/images/aluminium-Scaffolding.jpg',
+        'assets/images/aluminium-Scaffolding.jpg',
+        'assets/images/aluminium-Scaffolding.jpg'
+      ],
       description: 'High-quality aluminum scaffolding for construction and maintenance work.',
       price: 15999,
       originalPrice: 19999,
@@ -43,7 +49,13 @@ export class ProductListComponent {
     { 
       id: 2, 
       name: 'Bigger Aluminum Scaffolding', 
-      image: 'assets/images/bigger-aluminium-scaffolding.jpg', 
+      image: 'assets/images/bigger-aluminium-scaffolding.jpg',
+      images: [
+        'assets/images/bigger-aluminium-scaffolding.jpg',
+        'assets/images/bigger-aluminium-scaffolding.jpg',
+        'assets/images/bigger-aluminium-scaffolding.jpg',
+        'assets/images/bigger-aluminium-scaffolding.jpg'
+      ],
       description: 'Durable and lightweight scaffolding solution for all your needs.',
       price: 18999,
       originalPrice: 23999,
@@ -72,7 +84,13 @@ export class ProductListComponent {
     { 
       id: 3, 
       name: 'Scaffolding Tower', 
-      image: 'assets/images/scaffold-tower.jpg', 
+      image: 'assets/images/scaffold-tower.jpg',
+      images: [
+        'assets/images/scaffold-tower.jpg',
+        'assets/images/scaffold-tower.jpg',
+        'assets/images/scaffold-tower.jpg',
+        'assets/images/scaffold-tower.jpg'
+      ],
       description: 'Mobile scaffolding towers with excellent stability and safety features.',
       price: 21999,
       originalPrice: 26999,
@@ -101,7 +119,13 @@ export class ProductListComponent {
     { 
       id: 4, 
       name: 'Tank Ladder', 
-      image: 'assets/images/tank-ladder.jpg', 
+      image: 'assets/images/tank-ladder.jpg',
+      images: [
+        'assets/images/tank-ladder.jpg',
+        'assets/images/tank-ladder.jpg',
+        'assets/images/tank-ladder.jpg',
+        'assets/images/tank-ladder.jpg'
+      ],
       description: 'Specialized ladders designed for tank access and maintenance.',
       price: 8999,
       originalPrice: 11999,
@@ -130,7 +154,13 @@ export class ProductListComponent {
     { 
       id: 5, 
       name: 'Industrial Ladders', 
-      image: 'assets/images/industrial-ladder.jpg', 
+      image: 'assets/images/industrial-ladder.jpg',
+      images: [
+        'assets/images/industrial-ladder.jpg',
+        'assets/images/industrial-ladder.jpg',
+        'assets/images/industrial-ladder.jpg',
+        'assets/images/industrial-ladder.jpg'
+      ],
       description: 'Heavy-duty industrial ladders for professional applications.',
       price: 6999,
       originalPrice: 8999,
@@ -159,7 +189,13 @@ export class ProductListComponent {
     { 
       id: 6, 
       name: 'Mobile Aluminium Scaffolding', 
-      image: 'assets/images/mobile-scaffolding.png', 
+      image: 'assets/images/mobile-scaffolding.png',
+      images: [
+        'assets/images/mobile-scaffolding.png',
+        'assets/images/mobile-scaffolding.png',
+        'assets/images/mobile-scaffolding.png',
+        'assets/images/mobile-scaffolding.png'
+      ],
       description: 'Portable aluminum scaffolding with wheels for easy mobility.',
       price: 24999,
       originalPrice: 29999,
@@ -188,7 +224,13 @@ export class ProductListComponent {
     { 
       id: 7, 
       name: 'Hydraulic Scissor Lift', 
-      image: 'assets/images/hydraulic-scissor-lifts.png', 
+      image: 'assets/images/hydraulic-scissor-lifts.png',
+      images: [
+        'assets/images/hydraulic-scissor-lifts.png',
+        'assets/images/hydraulic-scissor-lifts.png',
+        'assets/images/hydraulic-scissor-lifts.png',
+        'assets/images/hydraulic-scissor-lifts.png'
+      ],
       description: 'Electric and hydraulic scissor lifts for height access solutions.',
       price: 89999,
       originalPrice: 109999,
@@ -217,7 +259,13 @@ export class ProductListComponent {
     { 
       id: 8, 
       name: 'Extension Ladder', 
-      image: 'assets/images/extension-ladder.jpg', 
+      image: 'assets/images/extension-ladder.jpg',
+      images: [
+        'assets/images/extension-ladder.jpg',
+        'assets/images/extension-ladder.jpg',
+        'assets/images/extension-ladder.jpg',
+        'assets/images/extension-ladder.jpg'
+      ],
       description: 'Extendable ladders for various height requirements.',
       price: 4999,
       originalPrice: 6999,

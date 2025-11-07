@@ -19,25 +19,22 @@
           <div class="sticky top-6">
             <div class="w-full h-80 bg-gray-200 rounded-lg overflow-hidden shadow-md">
               <img 
-                [src]="product?.image || 'assets/images/aluminium-Scaffolding.jpg'" 
+                [src]="selectedImage" 
                 [alt]="product?.name" 
                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
               />
             </div>
             
-            <!-- Thumbnail Images (Optional) -->
+            <!-- Thumbnail Images -->
             <div class="grid grid-cols-4 gap-2 mt-4">
-              <div class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition">
-                <img [src]="product?.image" alt="Thumbnail 1" class="w-full h-full object-cover">
-              </div>
-              <div class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition">
-                <img [src]="product?.image" alt="Thumbnail 2" class="w-full h-full object-cover">
-              </div>
-              <div class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition">
-                <img [src]="product?.image" alt="Thumbnail 3" class="w-full h-full object-cover">
-              </div>
-              <div class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition">
-                <img [src]="product?.image" alt="Thumbnail 4" class="w-full h-full object-cover">
+              <div 
+                *ngFor="let img of productImages; let i = index"
+                (click)="selectImage(img)"
+                [class.ring-2]="selectedImage === img"
+                [class.ring-emerald-600]="selectedImage === img"
+                class="w-full h-20 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75 transition"
+              >
+                <img [src]="img" [alt]="'Thumbnail ' + (i + 1)" class="w-full h-full object-cover">
               </div>
             </div>
           </div>

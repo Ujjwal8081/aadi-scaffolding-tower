@@ -11,6 +11,8 @@ export class ProductDescriptionComponent implements OnInit {
   @ViewChild(ContactNowComponent) contactNowDialog!: ContactNowComponent;
 
   product: any;
+  selectedImage: string = '';
+  productImages: string[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -32,6 +34,17 @@ export class ProductDescriptionComponent implements OnInit {
         sizes: [{ height: '50m', price: 12999 }]
       };
     }
+    
+    // Use product images array if available, otherwise use main image 4 times
+    this.productImages = this.product?.images || [
+      this.product?.image || 'assets/images/aluminium-Scaffolding.jpg',
+      this.product?.image || 'assets/images/aluminium-Scaffolding.jpg',
+      this.product?.image || 'assets/images/aluminium-Scaffolding.jpg',
+      this.product?.image || 'assets/images/aluminium-Scaffolding.jpg'
+    ];
+    
+    // Set first image as selected by default
+    this.selectedImage = this.productImages[0];
   }
 
   openDialog() {
@@ -47,5 +60,9 @@ export class ProductDescriptionComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/product-list']);
+  }
+
+  selectImage(image: string) {
+    this.selectedImage = image;
   }
 }
