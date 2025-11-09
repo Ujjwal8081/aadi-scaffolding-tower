@@ -20,7 +20,7 @@
                <a href="tel:8416839999">Call 8416839999</a>
               </div>
               <div class="text-xs text-gray-500 hidden sm:block">
-                82% Response rate
+                90% Response rate
               </div>
             </div>
           </button>
@@ -45,18 +45,18 @@
               <i class="fas fa-times" *ngIf="iconChange"></i>
             </button>
             <ul class="nav-menu" id="navMenu" [ngClass]="iconChange ? 'active':''">
-                <li><a routerLink="home" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                <li><a routerLink="home" (click)="iconChange && toggleIcon()" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
                 <li>
-                    <a routerLink="about/about-us" class="dropdown-toggle" id="aboutToggle" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">About Us</a>
+                    <a routerLink="about/about-us" class="dropdown-toggle" id="aboutToggle" (click)="iconChange && toggleIcon()" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">About Us</a>
                     <ul class="submenu bg-emerald-700" id="submenu">
                         <!-- <li><a routerLink="about/review-and-rating" [routerLinkActive]="'active'">Testimonial</a></li> -->
-                        <li><a routerLink="about/our-vision" [routerLinkActive]="'active'">Our Vision</a></li>
-                        <li><a routerLink="about/download-brochure" [routerLinkActive]="'active'">Download Brochure</a></li>
+                        <li><a routerLink="about/our-vision" (click)="iconChange && toggleIcon()" [routerLinkActive]="'active'">Our Vision</a></li>
+                        <li><a routerLink="about/download-brochure" (click)="iconChange && toggleIcon()" [routerLinkActive]="'active'">Download Brochure</a></li>
                     </ul>
                 </li>
-                <li><a routerLink="product-list" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Our Products</a></li>
-                <li><a routerLink="services" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Our Services</a></li>
-                <li><a routerLink="contact-us" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Contact Us</a></li>
+                <li><a routerLink="product-list" (click)="iconChange && toggleIcon()" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Our Products</a></li>
+                <li><a routerLink="services" (click)="iconChange && toggleIcon()" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Our Services</a></li>
+                <li><a routerLink="contact-us" (click)="iconChange && toggleIcon()" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Contact Us</a></li>
             </ul>
         </div>
     </nav>
