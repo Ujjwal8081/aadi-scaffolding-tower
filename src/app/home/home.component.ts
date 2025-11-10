@@ -80,7 +80,7 @@ export class HomeComponent {
     },
     {
       avatar: 'B',
-      name: 'Aadi infratech',
+      name: 'Shrijan infratech',
       // location: 'Hyderabad, Telangana',
       rating: 5,
       productName: 'Mobile Scaffold Tower',

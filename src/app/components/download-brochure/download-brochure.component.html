@@ -31,11 +31,11 @@
                 testimonials, and case studies of our most successful projects.
             </p>
             <div class="mt-auto pt-4">
-                <a class="inline-flex items-center justify-center gap-2 w-full bg-primary text-white dark:bg-accent dark:text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/90 dark:hover:bg-yellow-400 transition-colors"
-                    href="#">
-                    <span class="material-symbols-outlined">download</span>
-                    <span>Download PDF (12.5 MB)</span>
-                </a>
+                <button (click)="downloadBrochure()"
+                    class="inline-flex items-center justify-center gap-2 w-full bg-emerald-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-emerald-700 transition-colors">
+                    <i class="fas fa-download"></i>
+                    <span>Download Company Brochure (PDF)</span>
+                </button>
             </div>
         </div>
         <div
@@ -55,11 +55,11 @@
                 standards. An essential resource for project managers and safety officers.
             </p>
             <div class="mt-auto pt-4">
-                <a class="inline-flex items-center justify-center gap-2 w-full bg-secondary/20 text-text-light dark:bg-secondary/30 dark:text-text-dark font-bold py-3 px-6 rounded-lg hover:bg-secondary/30 dark:hover:bg-secondary/40 transition-colors"
-                    href="#">
-                    <span class="material-symbols-outlined">download</span>
-                    <span>Download PDF (4.2 MB)</span>
-                </a>
+                <button (click)="downloadSafetyManual()"
+                    class="inline-flex items-center justify-center gap-2 w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-download"></i>
+                    <span>Download Safety Manual (PDF)</span>
+                </button>
             </div>
         </div>
     </div>
