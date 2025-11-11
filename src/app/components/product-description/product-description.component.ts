@@ -53,7 +53,7 @@ export class ProductDescriptionComponent implements OnInit {
 
     if (this.product) {
       this.seoService.updateMetaTags({
-        title: `${this.product.name} - Premium Quality | Aadi Scaffolding Towers`,
+        title: `${this.product.name} - Premium Quality | ShrijanScaffolding Towers`,
         description: `${this.product.description} Best price: ₹${this.product.price}. ISO certified, warranty included. Call +91-8416839999 for quotes.`,
         keywords: `${this.product.name}, buy ${this.product.name}, ${this.product.name} price, scaffolding Pratapgarh`,
         ogImage: `https://shrijanscaffolding.com/${this.product.image}`,

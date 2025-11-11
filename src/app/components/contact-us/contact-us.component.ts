@@ -18,9 +18,9 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Contact Us - Aadi Scaffolding Towers | Call +91-8416839999',
+      title: 'Contact Us - ShrijanScaffolding Towers | Call +91-8416839999',
       description:
-        'Contact Aadi Scaffolding Towers in Pratapgarh. Address: Jail Road, Achalpur, Vikash Nagar. Phone: +91-8416839999. Email: aadicu@zohomail.in. Get free quotes!',
+        'Contact ShrijanScaffolding Towers in Pratapgarh. Address: Jail Road, Achalpur, Vikash Nagar. Phone: +91-8416839999. Email: aadicu@zohomail.in. Get free quotes!',
       keywords:
         'contact scaffolding company Pratapgarh, scaffolding supplier contact, scaffolding rental enquiry, get scaffolding quote',
       canonical: 'https://shrijanscaffolding.com/contact-us',

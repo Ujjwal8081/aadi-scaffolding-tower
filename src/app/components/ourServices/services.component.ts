@@ -11,7 +11,7 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Scaffolding Services - Rental, Installation, Maintenance | Aadi Scaffolding Towers',
+      title: 'Scaffolding Services - Rental, Installation, Maintenance | ShrijanScaffolding Towers',
       description: 'Professional scaffolding services in Pratapgarh: rental, installation, maintenance, 24/7 support. Experienced team, safety certified. Call +91-8416839999',
       keywords: 'scaffolding rental Pratapgarh, scaffolding installation services, scaffolding maintenance, scaffolding repair, emergency scaffolding services UP',
       canonical: 'https://shrijanscaffolding.com/services'

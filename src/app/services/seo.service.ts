@@ -67,7 +67,7 @@ export class SeoService {
       "description": product.description,
       "brand": {
         "@type": "Brand",
-        "name": "Aadi Scaffolding Towers"
+        "name": "ShrijanScaffolding Towers"
       },
       "offers": {
         "@type": "Offer",

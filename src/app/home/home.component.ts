@@ -131,7 +131,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Aadi Scaffolding Towers - Best Aluminium Scaffolding in Pratapgarh | Premium Quality',
+      title: 'ShrijanScaffolding Towers - Best Aluminium Scaffolding in Pratapgarh | Premium Quality',
       description: 'Leading scaffolding supplier in Pratapgarh, UP. Rent aluminium scaffolding, mobile towers, industrial ladders. 15+ years experience, ISO certified, 24/7 support. Call +91-8416839999',
       keywords: 'scaffolding Pratapgarh, aluminium scaffolding rental, mobile scaffolding towers UP, industrial ladders, scaffolding supplier Pratapgarh, construction equipment rental',
       canonical: 'https://shrijanscaffolding.com'

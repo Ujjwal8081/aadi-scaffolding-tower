@@ -14,9 +14,9 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'About Us - Aadi Scaffolding Towers | 15+ Years Experience in Pratapgarh',
-      description: 'Aadi Scaffolding Towers: Leading scaffolding company in Pratapgarh since 2005. ISO certified, 500+ projects completed, A+ safety rating. Trusted by construction professionals.',
-      keywords: 'about Aadi Scaffolding, scaffolding company Pratapgarh, ISO certified scaffolding, trusted scaffolding supplier UP',
+      title: 'About Us - ShrijanScaffolding Towers | 15+ Years Experience in Pratapgarh',
+      description: 'ShrijanScaffolding Towers: Leading scaffolding company in Pratapgarh since 2005. ISO certified, 500+ projects completed, A+ safety rating. Trusted by construction professionals.',
+      keywords: 'about ShrijanScaffolding, scaffolding company Pratapgarh, ISO certified scaffolding, trusted scaffolding supplier UP',
       canonical: 'https://shrijanscaffolding.com/about/about-us'
     });
   }

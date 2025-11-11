@@ -298,7 +298,7 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Scaffolding Products - Aluminium Scaffolding, Ladders, Mobile Towers | Aadi Scaffolding',
+      title: 'Scaffolding Products - Aluminium Scaffolding, Ladders, Mobile Towers | ShrijanScaffolding',
       description: 'Browse our range of premium scaffolding products: aluminium scaffolding, mobile towers, industrial ladders, hydraulic lifts. Best prices in Pratapgarh. ISO certified quality.',
       keywords: 'buy scaffolding, aluminium scaffolding price, mobile scaffolding tower, industrial ladder price, hydraulic scissor lift, scaffolding products Pratapgarh',
       canonical: 'https://shrijanscaffolding.com/product-list'
