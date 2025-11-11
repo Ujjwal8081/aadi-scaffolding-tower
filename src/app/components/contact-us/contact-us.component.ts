@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SeoService } from '../../services/seo.service';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 
@@ -7,11 +8,24 @@ import emailjs from '@emailjs/browser';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css'],
 })
-export class ContactUsComponent {
+export class ContactUsComponent implements OnInit {
   userName: string = '';
   userMobile: string = '';
   userEmail: string = '';
   userMessage: string = '';
+
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit() {
+    this.seoService.updateMetaTags({
+      title: 'Contact Us - Aadi Scaffolding Towers | Call +91-8416839999',
+      description:
+        'Contact Aadi Scaffolding Towers in Pratapgarh. Address: Jail Road, Achalpur, Vikash Nagar. Phone: +91-8416839999. Email: aadicu@zohomail.in. Get free quotes!',
+      keywords:
+        'contact scaffolding company Pratapgarh, scaffolding supplier contact, scaffolding rental enquiry, get scaffolding quote',
+      canonical: 'https://shrijanscaffolding.com/contact-us',
+    });
+  }
 
   sendEmail() {
     if (
@@ -39,7 +53,8 @@ export class ContactUsComponent {
       userMessage: this.userMessage,
     };
 
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
+    emailjs
+      .send(serviceID, templateID, templateParams, publicKey)
       .then(() => {
         Swal.fire({
           icon: 'success',

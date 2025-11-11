@@ -21,6 +21,7 @@ import { OurVisionComponent } from './components/our-vision/our-vision.component
 import { DownloadBrochureComponent } from './components/download-brochure/download-brochure.component';
 import { AboutComponent } from './components/about/about.component';
 import { FormsModule } from '@angular/forms';
+import { SeoService } from './services/seo.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { FormsModule } from '@angular/forms';
     SweetAlert2Module.forRoot(),
     FormsModule
   ],
-  providers: [],
+  providers: [SeoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

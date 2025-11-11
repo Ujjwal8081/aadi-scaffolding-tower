@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactNowComponent } from '../contact-now/contact-now.component';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-product-description',
@@ -14,7 +15,11 @@ export class ProductDescriptionComponent implements OnInit {
   selectedImage: string = '';
   productImages: string[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router,
+    private seoService: SeoService
+  ) {}
 
   ngOnInit() {
     this.product = window.history.state.product;
@@ -45,6 +50,18 @@ export class ProductDescriptionComponent implements OnInit {
     
     // Set first image as selected by default
     this.selectedImage = this.productImages[0];
+
+    if (this.product) {
+      this.seoService.updateMetaTags({
+        title: `${this.product.name} - Premium Quality | Aadi Scaffolding Towers`,
+        description: `${this.product.description} Best price: ₹${this.product.price}. ISO certified, warranty included. Call +91-8416839999 for quotes.`,
+        keywords: `${this.product.name}, buy ${this.product.name}, ${this.product.name} price, scaffolding Pratapgarh`,
+        ogImage: `https://shrijanscaffolding.com/${this.product.image}`,
+        canonical: 'https://shrijanscaffolding.com/product-description'
+      });
+
+      this.seoService.createProductSchema(this.product);
+    }
   }
 
   openDialog() {

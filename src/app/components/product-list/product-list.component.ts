@@ -1,13 +1,14 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactNowComponent } from '../contact-now/contact-now.component';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   @ViewChild(ContactNowComponent) contactNowDialog!: ContactNowComponent;
 
   products = [
@@ -293,7 +294,16 @@ export class ProductListComponent {
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private seoService: SeoService) {}
+
+  ngOnInit() {
+    this.seoService.updateMetaTags({
+      title: 'Scaffolding Products - Aluminium Scaffolding, Ladders, Mobile Towers | Aadi Scaffolding',
+      description: 'Browse our range of premium scaffolding products: aluminium scaffolding, mobile towers, industrial ladders, hydraulic lifts. Best prices in Pratapgarh. ISO certified quality.',
+      keywords: 'buy scaffolding, aluminium scaffolding price, mobile scaffolding tower, industrial ladder price, hydraulic scissor lift, scaffolding products Pratapgarh',
+      canonical: 'https://shrijanscaffolding.com/product-list'
+    });
+  }
 
   viewProduct(product: any) {
     this.router.navigate(['/product-description'], { state: { product } });
